@@ -9,7 +9,7 @@ AFLAGS = rcs
 all: connections my_Knapsack.o
 
 connections: my_graph.o libmymath.a
-	$(CC) $(CFLAGS) my_graph.o ./libmymath.a -o connections
+	$(CC) $(CFLAGS) my_graph.o -L. -lmymath -o connections
 
 libmymath.a: my_mat.o
 	$(AR) $(AFLAGS) libmymath.a my_mat.o
