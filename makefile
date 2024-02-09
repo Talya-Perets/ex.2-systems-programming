@@ -1,7 +1,7 @@
 CC = gcc
 AR = ar
 CFLAGS = -Wall -g
-AFLAGS = rcs
+AFLAGS = -rcs
 
 .PHONY: all clean
 
