@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+// Define constants for the number of items and the capacity 
 #define itemNum 5
 #define capacity 20
 
@@ -11,10 +12,14 @@ int max(int a, int b);
 
 
 int knapSack(int weights[], int values[], int selected_bool[]) {
+    // Create a matrix allocation to store intermediate results
   int **matrix = fillMatrix(weights, values);
+    // Retrieve the final result from the matrix
   int result = matrix[itemNum][capacity];
   int totalWeight = capacity;
+    // Backtrack to determine which items were selected
   for (int i = itemNum; i > 0 && totalWeight > 0; i--) {
+     // If the current item contributed to the maximum value, mark it as selected
     if (matrix[i][totalWeight] != matrix[i - 1][totalWeight]) {
       selected_bool[i - 1] += 1;
       totalWeight -= weights[i - 1];
@@ -46,6 +51,7 @@ int max(int a, int b) {
   return (a > b) ? a : b;
 }
 int main() {
+      // Arrays to store item information and selection status
     char items [itemNum] ;
     int weights[itemNum];
     int values[itemNum];
