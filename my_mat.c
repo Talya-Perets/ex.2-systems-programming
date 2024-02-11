@@ -41,9 +41,9 @@ int dijkstra_algorithm(int** m, int start, int dst, const int size) {
         scannedVert[u] = true;
 
         for (int v = 0; v < size; v++) {
-            // If 'v' is unvisited AND there is an edge from 'u' to 'v'
-            // AND the distance to 'u' is not INFINITY (i.e., 'u' is reachable)
-            // AND the path from 'start' to 'v' via 'u' is shorter than the current known path to 'v'
+            // If 'v' is unvisited and there is an edge from 'u' to 'v'
+            // and the distance to 'u' is not INFINITY (i.e., 'u' is reachable)
+            // and the path from 'start' to 'v' via 'u' is shorter than the current known path to 'v'
             if (!scannedVert[v] && m[u][v] && distanceFromStart[u] != INFINITY &&
                 distanceFromStart[u] + m[u][v] < distanceFromStart[v]) {
                 distanceFromStart[v] = distanceFromStart[u] + m[u][v];  // Update distance
