@@ -58,7 +58,7 @@ int main() {
     // Call knapSack after reading all inputs
     int max_value = knapSack(weights, values, selected_bool);
 
-    printf("Maximum profit:: %d\n", max_value);
+    printf("Maximum profit: %d\n", max_value);
     printf("Selected items:");
     for (int i = 0; i < itemNum; i++) {
       if(selected_bool[i])
